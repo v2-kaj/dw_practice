@@ -1,0 +1,30 @@
+div{
+    width:65%;
+    margin-left:auto;
+    margin-right:auto;
+}
+header img {
+    display:block;
+    width:200px;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 50%;
+    
+}
+header h1, nav{
+    text-align: center;
+}
+nav a{
+    margin:15px;
+}
+
+input[type=text], input[type=email], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(227, 9, 9);
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-size: 25px;
+  }
