@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Create Account</title>
+	<link rel="stylesheet" href="flexible.css"/>
+</head>
+<body>
+	<div class='row'>
+		<header class='col-12'><h1>Welcome to the Social App</h1></header>
+	</div>
+	<div class='row'>
+		<div class='col-4'></div>
+		<div class='col-4'>
+			<h3>Create Your Account</h3>
+			<form action="register_user.php" method="POST">
+				Username <br/>
+                <input type="text" name="user_name" placeholder='username'/>
+				<br>
+				<br>
+                Email <br>
+				<input type="email" name="user_email"  placeholder='email' />
+				<br>
+				<br>
+                Password <br>
+				<input type="password" name="user_password"  placeholder='password' />
+				<br>
+				<br>
+				<input type="submit" value="Create Account"/>	
+			</form>
+			<br>
+			<a href='login.html'>Login</a>
+		</div>
+		<div class='col-4'></div>
+	</div>
+</body>
+</html>

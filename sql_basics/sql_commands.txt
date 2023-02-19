@@ -1,0 +1,12 @@
+CREATE TABLE users(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	username VARCHAR(16),
+	email VARCHAR(64),
+	password VARCHAR(32)
+);
+INSERT INTO users(username, email, password)
+	VALUES("Ron","ron@mail.com", "1234");
+
+SELECT id FROM users WHERE username="Ron";
+
+DELETE from users WHERE username="Ron";
