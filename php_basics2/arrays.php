@@ -8,9 +8,12 @@
 </head>
 <body>
     <?php 
-      for($i=0;$i<5;$i++){
-        echo "Hello World<br>";
-      }
+    $details =Array("Ron", 20,6, True, 3.3, "Male");
+    for($i=0;$i<count($details);$i++){
+        echo $details[$i]."<br>";
+    }
+
     ?>
+    
 </body>
 </html>
