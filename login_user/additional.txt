@@ -1,0 +1,13 @@
+ //check if user already registered
+    $q = "SELECT id FROM users WHERE username='".$username."'";
+    $result = mysqli_query($conn, $q);
+    if(mysqli_num_rows($result) > 0) {
+        echo "<div class='row'>";
+        echo "<div class='col-4'></div>";
+        echo "<div class='col-4'>";
+        echo "<p>Username is taken</p>";
+        echo "<a href='create_account.html'>Go back</a>"; 
+        echo "</div>";
+        echo "<div class='col-4'></div>";
+        echo "</div>";  
+    }
