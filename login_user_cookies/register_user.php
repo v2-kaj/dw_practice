@@ -11,7 +11,7 @@
 <?php
 	$servername = "localhost";	
 	$username = "root";
-    $password = "";
+    $password = "Kajani_1993";
     $dbname = "socialapp";
 
     // Create connection

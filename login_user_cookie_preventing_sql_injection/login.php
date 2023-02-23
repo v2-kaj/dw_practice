@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +18,12 @@
 		<div class='col-4'>
 			<h3>Login</h3>
 			<form action="login_user.php" method="POST">
+				<?php
+				if(isset($_SESSION["invalid_credentials"])){
+					echo "<p>Invalid Credentials</p>";
+				
+				}
+				?>
 				Username <br/>
                 <input type="text" name="user_name" placeholder='username'/>
 				<br>

@@ -1,8 +1,12 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Create Account</title>
+	<title>Login</title>
 	<link rel="stylesheet" href="flexible.css"/>
 </head>
 <body>
@@ -12,24 +16,26 @@
 	<div class='row'>
 		<div class='col-4'></div>
 		<div class='col-4'>
-			<h3>Create Your Account</h3>
-			<form action="register_user.php" method="POST">
+			<h3>Login</h3>
+			<form action="login_user.php" method="POST">
+				<?php
+				if(isset($_SESSION["invalid_credentials"])){
+					echo "<p>Invalid Credentials</p>";
+				
+				}
+				?>
 				Username <br/>
                 <input type="text" name="user_name" placeholder='username'/>
-				<br>
-				<br>
-                Email <br>
-				<input type="email" name="user_email"  placeholder='email' />
 				<br>
 				<br>
                 Password <br>
 				<input type="password" name="user_password"  placeholder='password' />
 				<br>
 				<br>
-				<input type="submit" value="Create Account"/>	
+				<input type="submit" value="Login"/>	
 			</form>
 			<br>
-			<a href='login.html'>Login</a>
+			<a href='create_account.html'>Create an account</a>
 		</div>
 		<div class='col-4'></div>
 	</div>

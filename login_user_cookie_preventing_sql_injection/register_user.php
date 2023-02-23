@@ -22,9 +22,9 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $username = $_POST["user_name"];	
-    $email = $_POST["user_email"];
-    $password = $_POST["user_password"];
+    $username = mysqli_real_escape_string($conn, $_POST["user_name"]);	
+    $email = mysqli_real_escape_string($conn, $_POST["user_email"]);
+    $password = mysqli_real_escape_string($conn, $_POST["user_password"]);
 
     $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email','$password')";
     

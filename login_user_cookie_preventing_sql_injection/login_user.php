@@ -14,8 +14,8 @@ if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
 
-$username =  $_POST["user_name"];
-$password =  $_POST["user_password"];
+$username =  mysqli_real_escape_string($conn, $_POST["user_name"]);
+$password =  mysqli_real_escape_string($conn, $_POST["user_password"]);
 
 $sql = "SELECT * FROM users WHERE username='$username' && password='$password'";
 
@@ -25,7 +25,7 @@ if (mysqli_num_rows($result) > 0) {
 	$row = mysqli_fetch_assoc($result);
 	//login the user by putting their id in session
 	$_SESSION["user_id"] =  $row["id"]; 
-	$_SESSION["isloggedin"] =  True;
+	setcookie("user_id", $row["id"], time()+(3600*24*7)); 
 
 	//After successful login redirect the user to the posts page
 	header("Location: profile.php");
@@ -33,7 +33,7 @@ if (mysqli_num_rows($result) > 0) {
 } 
 //Authentication failed
 else {
-	$_SESSION["isloggedin"] =  False;
+	$_SESSION["invalid_credentials"] =  True;
 	header("Location: login.php");
 }
 

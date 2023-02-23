@@ -1,10 +1,20 @@
 <?php
 // Start the session
 session_start();
-if(!isset($_SESSION["isloggedin"])){
+
+if(isset($_COOKIE['user_id'])){
+    
+    $_SESSION["user_id"]=$_COOKIE['user_id'];
+
+}
+
+if(!isset($_SESSION["user_id"])){
+    
     header("Location: login.php");
 }
+
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
