@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline JS</title>
+</head>
+<body>
+    <h1>Hello NCC</h1>
+    <button onclick="sayHello()">Click Here</button>
+    <script>
+        function sayHello(){
+            const h1 = document.querySelector('h1')
+            h1.innerHTML='Hello World'
+        }
+    </script>
+</body>
+</html>
