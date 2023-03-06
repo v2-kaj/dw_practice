@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal JS</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lmBtn= document.querySelector('#lm')
+            const dmBtn = document.querySelector('#dm')
+            lmBtn.onclick= switchOnLightMode
+            dmBtn.onclick = switchOnDarkMode
+
+            function switchOnLightMode(){
+                const body = document.querySelector('body')
+                body.style.background='white'
+            }
+            function switchOnDarkMode(){
+                const body = document.querySelector('body')
+                body.style.background='black'
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <button id="dm">Dark Mode</button>
+    <button id="lm">Light Mode</button>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, 
+        adipisicing elit. Doloremque accusamus sit 
+        nobis cumque, neque praesentium? 
+        Adipisci iste explicabo blanditiis, 
+        mollitia a, animi at doloremque quos laudantium 
+        placeat nemo vel deserunt.
+    </p>
+</body>
+</html>

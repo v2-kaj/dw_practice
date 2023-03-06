@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal JS</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('form')
+            
+            form.onsubmit = addTodo
+
+            function addTodo() {
+                const taskField = document.querySelector('#taskField')
+                const li = document.createElement('li')
+                const ol= document.querySelector('ol')
+                
+                if(taskField.value.trim().length != 0){
+                li.innerHTML=taskField.value
+                ol.append(li)
+                }            
+                taskField.value=""
+                return false
+
+            }
+        })
+    </script>
+</head>
+<body>
+    <ol>
+
+    </ol>
+
+    <form action="" method="POST">
+        <input id="taskField" type="text" placeholder="task"name="task">
+        <input type="submit">
+    </form>
+</body>
+</html>
