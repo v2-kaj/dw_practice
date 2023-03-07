@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('form')
+            form.onsubmit = addATodo
+            function addATodo() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        //reload the tasks to reflect the users new post
+                        loadTasks()
+                    }
+                }
+                xhttp.open("POST", "addTodo.php", true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                const task = document.querySelector("#taskField").value
+                xhttp.send(`task=${task}`);
+                return false
+            }
+            function loadTasks() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        displayTasks(this);
+                    }
+                }
+                xhttp.open("GET", "tasks.php", true);
+                xhttp.setRequestHeader('Content-Type', 'text/xml');
+                xhttp.responseType = "document";
+                xhttp.send();
+            }
+            function displayTasks(xml) {
+                var xmlDoc = xml.responseXML;
+                var li = "<li>";
+                var xmlfile = xmlDoc.getElementsByTagName("Task");
+                if (xmlfile.length > 0) {
+                    for (let i = 0; i < xmlfile.length; i++) {
+                        li += "<li class='status'>" + xmlfile[i].getElementsByTagName("text")[0].childNodes[0].nodeValue +
+                            "<hr>" +
+                            xmlfile[i].getElementsByTagName("text")[0].childNodes[0].nodeValue +
+                            "</li>";
+                    }
+                }
+            }
+            })
+    </script>
+</head>
+
+<body>
+    <ol>
+
+    </ol>
+    <form action="">
+        <input type="text" id="taskField" placeholder="task">
+        <input type="submit">
+    </form>
+</body>
+
+</html>

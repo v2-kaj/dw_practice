@@ -1,0 +1,41 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Light/Dark Mode using jQuery</title>
+	
+	<style>
+		body {
+			background: black;
+		}
+	</style>
+	 <!--Include the jQuery library-->
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	 <!--Our own jQuery js code-->
+	 <script>
+		 $(document).ready(function () {
+			 $("#dark").click(function () {
+				//Setting jQuery css properties and values
+				$("body").css("background-color", "black");
+				
+			 });
+ 
+			 $("#light").click(function () {
+				//Setting jQuery css properties and values
+				$("body").css("background-color", "white");
+			
+			   
+			 });
+ 
+		 });
+	 </script>
+</head>
+
+<body>
+	<button id="dark">Dark Mode</button>
+	<button id="light">Light Mode</button>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, suscipit mollitia. Asperiores enim, at dicta temporibus, atque, delectus similique repellat placeat voluptatum consequatur eveniet cum nisi ut excepturi incidunt quam!</p>
+</body>
+
+</html>
