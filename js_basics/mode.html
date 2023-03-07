@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light and Dark Mode</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const lmBtn = document.querySelector('#lm')
+            const dmBtn = document.querySelector('#dm')
+            lmBtn.onclick = changeToLightMode
+            dmBtn.onclick = changeToDarkMode
+
+            function changeToDarkMode(){
+               const body = document.querySelector('body')
+               body.style.background='black'
+               body.style.color='white'
+            }
+            function changeToLightMode(){
+               const body = document.querySelector('body')
+               body.style.background='white'
+               body.style.color='black'
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <button id="dm">Dark</button>
+    <button id="lm">Light</button>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit laudantium ipsam, dolorum doloremque doloribus
+        molestias? Saepe iste ipsa nisi distinctio aspernatur sint explicabo quod ea, dolorem tempore laborum earum
+        eveniet?</p>
+
+</body>
+
+</html>

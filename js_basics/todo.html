@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('form')
+            form.onsubmit = addATodo
+            function addATodo() {
+                const inputField = document.querySelector("#taskField")
+                const task = inputField.value
+                if (task.trim().length===0) {
+                    alert('You forgot to type your task')
+                }
+                else {
+                    const taskList = document.querySelector('ol')
+                    const li = document.createElement('li')
+                    li.innerHTML = task
+                    taskList.append(li)
+                }
+                return false
+
+            }
+
+        })
+    </script>
+</head>
+
+<body>
+    <ol>
+
+    </ol>
+    <form action="">
+        <input type="text" id="taskField" placeholder="task">
+        <input type="submit">
+    </form>
+</body>
+
+</html>
