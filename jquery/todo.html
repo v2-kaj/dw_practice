@@ -13,7 +13,13 @@
 	<script>
 		$(document).ready(function () {
 			$("form").submit(function (event) {
-				$("#taskList").append(`<li>${$("#task").val()}</li>`);
+				const text = $("#task").val()
+				if(text.trim().length===0)
+				{alert("You forgot to type the tex ")}
+				else{
+				const task = `<li>${text}</li>`
+				$("#taskList").append(task);
+				}
 				return false
 			});
 
