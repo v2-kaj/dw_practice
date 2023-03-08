@@ -30,7 +30,7 @@
         if (mysqli_num_rows($tasks) > 0) {
             // output data of each task
             foreach ($tasks as $task) {
-                echo "<li>" . $task["text"] . "</li>";
+                echo "<li>" . $task["text"] . "<a href='update_todo_page.php?id=$task[id]'>Edit</a> <a href='delete_todo_page.php?id=$task[id]'>Del</a></li>";
             }
         } else {
             echo "No Tasks";
